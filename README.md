@@ -6,10 +6,11 @@
 
 ## 📑 Mục Lục
 1. [Nội Dung Đề Bài](#-nội-dung-đề-bài)
-2. [Các Tính Năng & Luồng Hoạt Động](#-các-tính-năng--luồng-hoạt-động)
-3. [Công Nghệ & Kỹ Thuật Sử Dụng](#-công-nghệ--kỹ-thuật-sử-dụng)
-4. [Cấu Trúc Thư Mục Dự Án](#-cấu-trúc-thư-mục-dự-án)
-5. [Hướng Dẫn Cài Đặt & Chạy Ứng Dụng](#-hướng-dẫn-cài-đặt--chạy-ứng-dụng)
+2. [Ảnh Chụp Ứng Dụng Thực Tế](#-ảnh-chụp-ứng-dụng-thực-tế)
+3. [Các Tính Năng & Luồng Hoạt Động](#-các-tính-năng--luồng-hoạt-động)
+4. [Công Nghệ & Kỹ Thuật Sử Dụng](#-công-nghệ--kỹ-thuật-sử-dụng)
+5. [Cấu Trúc Thư Mục Dự Án](#-cấu-trúc-thư-mục-dự-án)
+6. [Hướng Dẫn Cài Đặt & Chạy Ứng Dụng](#-hướng-dẫn-cài-đặt--chạy-ứng-dụng)
 
 ---
 
@@ -34,6 +35,22 @@ Hoàn thành các yêu cầu dưới đây và giải thích cách xử lý cũn
 - Khi người dùng nhấn vào một mục trên giao diện 01 thì một hộp thoại sẽ hiển thị để người dùng chỉnh sửa tên, giá và mô tả của hoa.
 - Kiểm tra thông tin mà người dùng nhập vào hộp thoại, đảm bảo giá là kiểu số.
 - Lưu những thông tin người dùng đã nhập trong hộp thoại ở ý trên vào thành phần đã chọn trên giao diện số 01.
+
+---
+
+## 📱 Ảnh Chụp Ứng Dụng Thực Tế
+
+<p align="center">
+  <img src="screenshot_gd01.png" alt="Giao diện 01 - Danh sách hoa" width="31%" />
+  &nbsp;
+  <img src="screenshot_dialog.png" alt="Hộp thoại chỉnh sửa thông tin" width="31%" />
+  &nbsp;
+  <img src="screenshot_gd02.png" alt="Giao diện 02 - Chi tiết hoa" width="31%" />
+</p>
+
+| Giao diện 01 (Danh sách hoa) | Hộp thoại sửa & kiểm tra dữ liệu | Giao diện 02 (Chi tiết & Quay lại) |
+| :---: | :---: | :---: |
+| Thẻ `CardView` ảnh hoa hướng dương chuẩn Hình 03 | Nhấn vào thẻ mở Dialog điền sẵn dữ liệu, kiểm tra giá số | Xem mô tả chi tiết và nút Quay lại bo tròn |
 
 ---
 
@@ -107,7 +124,7 @@ MyFlower/
 │   │   │   │   ├── activity_main.xml       # Layout Giao diện 01 (RecyclerView)
 │   │   │   │   ├── activity_detail.xml     # Layout Giao diện 02 (Chi tiết hoa)
 │   │   │   │   ├── item_flower.xml         # Layout item card hoa (Hình 03)
-│   │   │   └── dialog_edit_flower.xml  # Layout hộp thoại chỉnh sửa thông tin hoa
+│   │   │   │   └── dialog_edit_flower.xml  # Layout hộp thoại chỉnh sửa thông tin hoa
 │   │   │   └── values/
 │   │   │       ├── colors.xml              # Định nghĩa màu sắc (giá đỏ, nút xanh, nền...)
 │   │   │       ├── strings.xml             # Tên ứng dụng và chuỗi ký tự
@@ -115,6 +132,9 @@ MyFlower/
 │   │   └── AndroidManifest.xml         # Khai báo MainActivity & DetailActivity
 │   └── build.gradle.kts                # Cấu hình build & kích hoạt viewBinding
 ├── de_bai.png                          # Ảnh chụp đề bài gốc
+├── screenshot_gd01.png                 # Ảnh chụp thực tế Giao diện 01
+├── screenshot_dialog.png               # Ảnh chụp thực tế Hộp thoại sửa
+├── screenshot_gd02.png                 # Ảnh chụp thực tế Giao diện 02
 └── README.md                           # Tài liệu tổng quan dự án
 ```
 
