@@ -35,40 +35,18 @@ class MainActivity : AppCompatActivity() {
         setupRecyclerView()
     }
 
-    // Câu 1: Khởi tạo danh sách có ít nhất 3 thành phần hoa
+    // Khởi tạo danh sách hoa
     private fun initData() {
         flowerList.clear()
         flowerList.add(
             Flower(
                 id = 1,
                 name = "Hoa hướng dương",
-                shortDesc = "Mô tả ngắn về hoa hướng dương rực rỡ dưới ánh mặt trời.",
+                shortDesc = "Mô tả ngắn về hoa",
                 detailDesc = "Đặc điểm: Hoa hướng dương là loài hoa nổi bật với màu vàng tươi sáng, luôn hướng về phía mặt trời. Chúng có thân cao và lá lớn, thường được trồng để trang trí trong các vườn hoa hoặc làm nguyên liệu trong các sản phẩm thực phẩm. Hoa hướng dương tượng trưng cho sự kiên cường, tươi mới và năng lượng tích cực.",
                 price = 100000.0,
                 unit = "bó",
                 imageResId = R.drawable.img_sunflower
-            )
-        )
-        flowerList.add(
-            Flower(
-                id = 2,
-                name = "Hoa hồng đỏ",
-                shortDesc = "Mô tả ngắn về hoa hồng đỏ tượng trưng cho tình yêu nồng thắm.",
-                detailDesc = "Đặc điểm: Hoa hồng đỏ là biểu tượng kinh điển của tình yêu và sự đam mê mãnh liệt. Những cánh hoa mềm mại xếp tầng tinh tế, tỏa hương thơm thanh nhẹ và quyến rũ, là lựa chọn số một cho các ngày kỷ niệm và lễ hội.",
-                price = 150000.0,
-                unit = "bó",
-                imageResId = R.drawable.img_rose
-            )
-        )
-        flowerList.add(
-            Flower(
-                id = 3,
-                name = "Hoa sen hồng",
-                shortDesc = "Mô tả ngắn về hoa sen hồng thanh khiết, ngát hương đồng nội.",
-                detailDesc = "Đặc điểm: Hoa sen là quốc hoa tượng trưng cho vẻ đẹp thanh tao, thuần khiết 'gần bùn mà chẳng hôi tanh mùi bùn'. Hoa sen mang lại cảm giác bình an, thanh tịnh và thường xuất hiện trong không gian nghệ thuật, trà đạo.",
-                price = 120000.0,
-                unit = "bó",
-                imageResId = R.drawable.img_lotus
             )
         )
     }
