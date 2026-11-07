@@ -6,8 +6,8 @@
 
 ## 📑 Mục Lục
 1. [Nội Dung Đề Bài](#-nội-dung-đề-bài)
-2. [Các Tính Năng Chính](#-các-tính-năng-chính)
-3. [Công Nghệ & Thư Viện Sử Dụng](#-công-nghệ--thư-viện-sử-dụng)
+2. [Các Tính Năng & Luồng Hoạt Động](#-các-tính-năng--luồng-hoạt-động)
+3. [Công Nghệ & Kỹ Thuật Sử Dụng](#-công-nghệ--kỹ-thuật-sử-dụng)
 4. [Cấu Trúc Thư Mục Dự Án](#-cấu-trúc-thư-mục-dự-án)
 5. [Hướng Dẫn Cài Đặt & Chạy Ứng Dụng](#-hướng-dẫn-cài-đặt--chạy-ứng-dụng)
 
@@ -37,35 +37,54 @@ Hoàn thành các yêu cầu dưới đây và giải thích cách xử lý cũn
 
 ---
 
-## 🌟 Các Tính Năng Chính
+## 🌟 Các Tính Năng & Luồng Hoạt Động
 
-- **Giao diện danh sách hoa (Giao diện 01)**:
-  - Hiển thị danh sách hoa dưới dạng thẻ `CardView` bo góc đổ bóng chuẩn Material Design.
-  - Mỗi thẻ gồm: Ảnh hoa, Tên hoa, CheckBox chọn/bỏ chọn, Mô tả ngắn, Giá tiền nổi bật màu đỏ (`VND`), Đơn vị tính ("bó").
-- **Giao diện chi tiết hoa (Giao diện 02)**:
-  - Ảnh hoa lớn toàn chiều ngang ở phần đầu màn hình.
-  - Khối nội dung cuộn mượt mà (`ScrollView`) chứa tên hoa, khối mô tả đặc điểm chi tiết, giá tiền và đơn vị.
-  - Nút **"Quay lại"** hình viên thuốc (pill-shape) màu xanh lam ở dưới cùng, bấm vào sẽ quay về màn hình trước.
-- **Hộp thoại Chỉnh sửa & Kiểm tra (Dialog)**:
-  - Khi nhấn vào một item trên GD 01, `AlertDialog` tùy chỉnh xuất hiện với dữ liệu hiện tại được điền sẵn.
-  - **Kiểm tra hợp lệ chặt chẽ**:
-    - Tên không được rỗng.
-    - **Giá hoa bắt buộc phải là số hợp lệ (`Double`), không chứa chữ cái, và phải lớn hơn 0**.
-    - Mô tả không được để trống.
-  - Cập nhật tức thì vào vị trí item đó trên `RecyclerView` (`notifyItemChanged`), không tải lại toàn bộ danh sách.
+### 1. Giao diện 01 - Danh Sách Hoa (`MainActivity`)
+- Hiển thị các thẻ hoa (`CardView`) bo góc 12dp và đổ bóng 4dp trên nền xám nhạt (`#F8F9FA`).
+- Sử dụng ảnh chụp thực tế chất lượng cao của **Hoa hướng dương** (`img_sunflower.png`) đúng chuẩn mẫu Hình 03 trong đề bài.
+- Mỗi thẻ gồm:
+  - **Ảnh hoa**: Hiển thị với thuộc tính `centerCrop`, góc bo theo thẻ.
+  - **Tên hoa**: Chữ đậm, kích thước 17sp.
+  - **CheckBox "Chọn"**: Nằm bên góc phải ngang hàng với tên hoa, độc lập trạng thái cho từng item.
+  - **Mô tả ngắn**: Trình bày màu xám nhạt, tối đa 2 dòng.
+  - **Giá tiền**: Nổi bật với màu đỏ (`#D32F2F`) định dạng `Giá: 100,000 VND`.
+  - **Đơn vị**: Hiển thị ở góc dưới bên phải (`Đơn vị: bó`).
+
+### 2. Giao diện 02 - Chi Tiết Hoa (`DetailActivity`)
+- **Ảnh lớn toàn chiều ngang**: Đặt ở phần trên màn hình với chiều cao 240dp.
+- **Khối văn bản cuộn (`ScrollView`)**:
+  - Tiêu đề Tên hoa in đậm 20sp.
+  - Toàn bộ đoạn văn mô tả chi tiết đặc điểm sinh trưởng và ý nghĩa biểu tượng của hoa.
+  - Giá bán màu đỏ và Đơn vị tính rõ ràng.
+- **Nút "Quay lại"**:
+  - Thiết kế bo tròn kiểu viên thuốc (pill-shape) bằng drawable `bg_rounded_button.xml` với màu xanh lam đậm (`#0288D1`).
+  - Khi nhấn, gọi `finish()` để đóng màn hình chi tiết và quay trở lại danh sách.
+
+### 3. Hộp thoại Chỉnh sửa & Kiểm tra dữ liệu (Câu 3)
+- **Tương tác**:
+  - Nhấn vào thẻ hoa ➔ Mở `AlertDialog` tùy chỉnh (`dialog_edit_flower.xml`).
+  - Nhấn vào ảnh hoa (hoặc bấm nút "Chi tiết" trong Dialog) ➔ Mở màn hình Giao diện 02.
+- **Điền sẵn dữ liệu hiện tại**: Tên hoa, Giá tiền, Mô tả ngắn.
+- **Kiểm tra dữ liệu (Validation)**:
+  - **Tên hoa**: Bắt buộc nhập, không được để trống.
+  - **Giá hoa**: **Bắt buộc là kiểu số (`Double`), không chứa ký tự chữ/ký tự đặc biệt, và phải lớn hơn 0**. Nếu vi phạm sẽ hiển thị cảnh báo lỗi trực tiếp trên ô nhập (`setError`).
+  - **Mô tả**: Bắt buộc nhập nội dung.
+- **Lưu dữ liệu**:
+  - Dữ liệu mới được cập nhật vào đối tượng `Flower`.
+  - Gọi `notifyItemChanged(position)` để cập nhật lại đúng vị trí item vừa chỉnh sửa trên `RecyclerView` mà không cần vẽ lại toàn bộ danh sách.
 
 ---
 
-## 🛠 Công Nghệ & Thư Viện Sử Dụng
+## 🛠 Công Nghệ & Kỹ Thuật Sử Dụng
 
-- **Ngôn ngữ**: Kotlin (100%)
-- **Hệ điều hành hỗ trợ**: Android SDK 26 (Android 8.0) đến SDK 37 (Android 15+)
-- **Kiến trúc & Tiện ích**:
-  - `ViewBinding`: Truy xuất view an toàn về kiểu dữ liệu (type-safe) và an toàn với null (null-safe).
-  - `RecyclerView` + `ViewHolder Pattern`: Tối ưu hóa hiệu năng tái sử dụng view và tiết kiệm bộ nhớ RAM.
-  - `CardView` + `ConstraintLayout`: Phẳng hóa phân cấp layout, hỗ trợ bo tròn góc và đổ bóng nhẹ.
-  - `AlertDialog`: Tạo hộp thoại chỉnh sửa dữ liệu người dùng.
-  - `Vector Drawable`: Tối ưu hóa dung lượng ứng dụng với đồ họa vector sắc nét trên mọi mật độ màn hình.
+- **Ngôn ngữ lập trình**: Kotlin.
+- **Nền tảng mục tiêu**: Android SDK 26 (Android 8.0) ➔ SDK 37 (Android 15+).
+- **Thành phần & Kỹ thuật cốt lõi**:
+  - **ViewBinding**: Thay thế hoàn toàn `findViewById`, đảm bảo an toàn kiểu dữ liệu và tránh null crash.
+  - **RecyclerView + ViewHolder Pattern**: Tái sử dụng view khi cuộn, tối ưu bộ nhớ và đem lại trải nghiệm mượt mà.
+  - **CardView + ConstraintLayout**: Xây dựng giao diện thẻ phẳng, dễ dàng căn chỉnh tỷ lệ và neo vị trí các thành phần.
+  - **Custom AlertDialog**: Tạo hộp thoại chỉnh sửa thông tin có giao diện thống nhất với ứng dụng.
+  - **Kiểm tra dữ liệu số với Kotlin**: Ứng dụng hàm mở rộng `toDoubleOrNull()` giúp kiểm tra kiểu số nhanh chóng và chính xác.
 
 ---
 
@@ -82,13 +101,13 @@ MyFlower/
 │   │   │   └── DetailActivity.kt       # Màn hình chi tiết (Giao diện 02) & nút Quay lại
 │   │   ├── res/
 │   │   │   ├── drawable/
-│   │   │   │   ├── bg_rounded_button.xml # Shape nền bo góc 24dp cho nút "Quay lại"
-│   │   │   │   └── img_sunflower.png     # Ảnh hoa hướng dương
+│   │   │   │   ├── bg_rounded_button.xml # Shape bo góc 24dp cho nút "Quay lại"
+│   │   │   │   └── img_sunflower.png     # Ảnh chụp hoa hướng dương thực tế
 │   │   │   ├── layout/
 │   │   │   │   ├── activity_main.xml       # Layout Giao diện 01 (RecyclerView)
 │   │   │   │   ├── activity_detail.xml     # Layout Giao diện 02 (Chi tiết hoa)
 │   │   │   │   ├── item_flower.xml         # Layout item card hoa (Hình 03)
-│   │   │   │   └── dialog_edit_flower.xml  # Layout hộp thoại chỉnh sửa thông tin hoa
+│   │   │   └── dialog_edit_flower.xml  # Layout hộp thoại chỉnh sửa thông tin hoa
 │   │   │   └── values/
 │   │   │       ├── colors.xml              # Định nghĩa màu sắc (giá đỏ, nút xanh, nền...)
 │   │   │       ├── strings.xml             # Tên ứng dụng và chuỗi ký tự
@@ -104,13 +123,13 @@ MyFlower/
 ## 🚀 Hướng Dẫn Cài Đặt & Chạy Ứng Dụng
 
 1. **Mở dự án trong Android Studio**:
-   - Chọn `File` -> `Open` -> Trỏ đến thư mục `C:/Users/jimmy/AndroidStudioProjects/MyFlower`.
+   - Chọn `File` ➔ `Open` ➔ Trỏ đến thư mục `C:/Users/jimmy/AndroidStudioProjects/MyFlower`.
 2. **Đồng bộ Gradle**:
    - Nhấn **Sync Project with Gradle Files**.
-3. **Build APK hoặc chạy trên thiết bị**:
+3. **Build và Chạy**:
    - Chọn máy ảo Android (AVD) hoặc thiết bị thật đã bật USB Debugging.
    - Nhấn nút **Run 'app'** (`Shift + F10`) hoặc chạy lệnh Gradle trong Terminal:
      ```bash
      ./gradlew assembleDebug
      ```
-   - File APK tạo ra tại: `app/build/outputs/apk/debug/app-debug.apk`.
+   - File APK xuất ra tại: `app/build/outputs/apk/debug/app-debug.apk`.
