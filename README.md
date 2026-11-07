@@ -142,13 +142,18 @@ MyFlower/
 
 ## 🚀 Hướng Dẫn Cài Đặt & Chạy Ứng Dụng
 
-1. **Mở dự án trong Android Studio**:
-   - Chọn `File` ➔ `Open` ➔ Trỏ đến thư mục `C:/Users/jimmy/AndroidStudioProjects/MyFlower`.
-2. **Đồng bộ Gradle**:
-   - Nhấn **Sync Project with Gradle Files**.
-3. **Build và Chạy**:
-   - Chọn máy ảo Android (AVD) hoặc thiết bị thật đã bật USB Debugging.
-   - Nhấn nút **Run 'app'** (`Shift + F10`) hoặc chạy lệnh Gradle trong Terminal:
+1. **Tải hoặc Clone dự án về máy**:
+   ```bash
+   git clone https://github.com/tuanbui69/MyFlower.git
+   ```
+2. **Mở dự án trong Android Studio**:
+   - Khởi động **Android Studio**.
+   - Chọn `File` ➔ `Open` ➔ Điều hướng và chọn thư mục dự án `MyFlower`.
+3. **Đồng bộ Gradle**:
+   - Nhấn **Sync Project with Gradle Files** và chờ IDE tải các dependencies.
+4. **Build và Chạy ứng dụng**:
+   - Chọn máy ảo Android (AVD) hoặc thiết bị thật (đã bật *USB Debugging*).
+   - Nhấn nút **Run 'app'** (`Shift + F10`) trên thanh công cụ hoặc chạy lệnh trong Terminal:
      ```bash
      ./gradlew assembleDebug
      ```
