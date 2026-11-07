@@ -15,7 +15,11 @@
 
 ## 🎯 Nội Dung Đề Bài
 
-Cho giao diện ứng dụng điện thoại như thiết kế mẫu.
+<p align="center">
+  <img src="de_bai.png" alt="Ảnh chụp đề bài" width="750" />
+</p>
+
+Cho giao diện ứng dụng điện thoại như thiết kế mẫu trên:
 
 ### **Câu 1:**
 Thiết kế giao diện như hình:
@@ -91,6 +95,7 @@ MyFlower/
 │   │   │       └── themes.xml              # Theme hệ thống Material3
 │   │   └── AndroidManifest.xml         # Khai báo MainActivity & DetailActivity
 │   └── build.gradle.kts                # Cấu hình build & kích hoạt viewBinding
+├── de_bai.png                          # Ảnh chụp đề bài gốc
 └── README.md                           # Tài liệu tổng quan dự án
 ```
 
