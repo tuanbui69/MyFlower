@@ -5,7 +5,7 @@
 ---
 
 ## 📑 Mục Lục
-1. [Tổng Quan Đề Bài & Thang Điểm](#-tổng-quan-đề-bài--thang-điểm)
+1. [Nội Dung Đề Bài](#-nội-dung-đề-bài)
 2. [Các Tính Năng Chính](#-các-tính-năng-chính)
 3. [Công Nghệ & Thư Viện Sử Dụng](#-công-nghệ--thư-viện-sử-dụng)
 4. [Cấu Trúc Thư Mục Dự Án](#-cấu-trúc-thư-mục-dự-án)
@@ -13,13 +13,23 @@
 
 ---
 
-## 🎯 Tổng Quan Đề Bài & Thang Điểm
+## 🎯 Nội Dung Đề Bài
 
-| Câu hỏi | Điểm | Yêu cầu chính |
-| :--- | :---: | :--- |
-| **Câu 1** | **2.0đ** | • **Giao diện 01**: Danh sách có ít nhất 3 thành phần (item card) hoa như hình mẫu.<br>• **Giao diện 02**: Màn hình xem chi tiết đầy đủ của một loài hoa, có nút "Quay lại". |
-| **Câu 2** | **2.0đ** | Giải thích cách tổ chức, cấu trúc giao diện và vai trò của từng thành phần UI bên trong. |
-| **Câu 3** | **6.0đ** | • **3.1 (2đ)**: Nhấn vào 1 mục trên GD 01 hiển thị hộp thoại sửa tên, giá và mô tả.<br>• **3.2 (2đ)**: Kiểm tra thông tin nhập vào hộp thoại, **đảm bảo giá là kiểu số**.<br>• **3.3 (2đ)**: Lưu thông tin vừa sửa vào thành phần đã chọn trên Giao diện 01. |
+Cho giao diện ứng dụng điện thoại như thiết kế mẫu.
+
+### **Câu 1:**
+Thiết kế giao diện như hình:
+- **Giao diện 01**: Cần có sẵn ít nhất 3 thành phần như hình 03.
+- **Giao diện 02**: Dùng để mô tả chi tiết về một thành phần ở hình 01.
+
+### **Câu 2:**
+Giải thích cách xây dựng giao diện và cách sử dụng các thành phần bên trong giao diện.
+
+### **Câu 3:**
+Hoàn thành các yêu cầu dưới đây và giải thích cách xử lý cũng như cách sử dụng các thành phần đã dùng:
+- Khi người dùng nhấn vào một mục trên giao diện 01 thì một hộp thoại sẽ hiển thị để người dùng chỉnh sửa tên, giá và mô tả của hoa.
+- Kiểm tra thông tin mà người dùng nhập vào hộp thoại, đảm bảo giá là kiểu số.
+- Lưu những thông tin người dùng đã nhập trong hộp thoại ở ý trên vào thành phần đã chọn trên giao diện số 01.
 
 ---
 
