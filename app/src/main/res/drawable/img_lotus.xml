@@ -1,0 +1,27 @@
+<vector xmlns:android="http://schemas.android.com/apk/res/android"
+    android:width="200dp"
+    android:height="120dp"
+    android:viewportWidth="200"
+    android:viewportHeight="120">
+    <!-- Water background -->
+    <path
+        android:fillColor="#E0F7FA"
+        android:pathData="M0,0h200v120h-200z" />
+    <!-- Lotus leaf -->
+    <path
+        android:fillColor="#81C784"
+        android:pathData="M135,75 m-50,0 a50,20 0 1,0 100,0 a50,20 0 1,0 -100,0" />
+    <!-- Lotus Petals -->
+    <path
+        android:fillColor="#F48FB1"
+        android:pathData="M135,30 C110,50 105,70 135,75 C165,70 160,50 135,30 Z" />
+    <path
+        android:fillColor="#EC407A"
+        android:pathData="M115,40 C95,55 95,70 120,73 C130,60 125,48 115,40 Z" />
+    <path
+        android:fillColor="#EC407A"
+        android:pathData="M155,40 C175,55 175,70 150,73 C140,60 145,48 155,40 Z" />
+    <path
+        android:fillColor="#F8BBD0"
+        android:pathData="M135,42 C120,55 120,68 135,70 C150,68 150,55 135,42 Z" />
+</vector>

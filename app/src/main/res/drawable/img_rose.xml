@@ -1,0 +1,32 @@
+<vector xmlns:android="http://schemas.android.com/apk/res/android"
+    android:width="200dp"
+    android:height="120dp"
+    android:viewportWidth="200"
+    android:viewportHeight="120">
+    <!-- Green garden background -->
+    <path
+        android:fillColor="#E8F5E9"
+        android:pathData="M0,0h200v120h-200z" />
+    <!-- Leaves -->
+    <path
+        android:fillColor="#4CAF50"
+        android:pathData="M110,75 C90,85 70,70 85,55 C95,65 110,75 110,75 Z" />
+    <path
+        android:fillColor="#388E3C"
+        android:pathData="M165,75 C185,85 205,70 190,55 C180,65 165,75 165,75 Z" />
+    <!-- Rose outer petals -->
+    <path
+        android:fillColor="#E53935"
+        android:pathData="M140,60 m-40,0 a40,40 0 1,0 80,0 a40,40 0 1,0 -80,0" />
+    <!-- Middle petals -->
+    <path
+        android:fillColor="#C62828"
+        android:pathData="M140,60 m-28,0 a28,28 0 1,0 56,0 a28,28 0 1,0 -56,0" />
+    <!-- Inner petals -->
+    <path
+        android:fillColor="#B71C1C"
+        android:pathData="M140,60 m-16,0 a16,16 0 1,0 32,0 a16,16 0 1,0 -32,0" />
+    <path
+        android:fillColor="#FF8A80"
+        android:pathData="M140,58 m-8,0 a8,8 0 1,0 16,0 a8,8 0 1,0 -16,0" />
+</vector>

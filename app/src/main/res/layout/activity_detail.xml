@@ -1,0 +1,99 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/detailMain"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/white"
+    tools:context=".DetailActivity">
+
+    <!-- Top flower image -->
+    <ImageView
+        android:id="@+id/imgDetailFlower"
+        android:layout_width="0dp"
+        android:layout_height="240dp"
+        android:contentDescription="Ảnh chi tiết hoa"
+        android:scaleType="centerCrop"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        tools:srcCompat="@drawable/img_sunflower" />
+
+    <ScrollView
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:fillViewport="true"
+        app:layout_constraintBottom_toTopOf="@+id/btnBack"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/imgDetailFlower">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:padding="16dp">
+
+            <!-- Flower Name -->
+            <TextView
+                android:id="@+id/tvDetailName"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:textColor="@color/text_title"
+                android:textSize="20sp"
+                android:textStyle="bold"
+                tools:text="Tên Hoa" />
+
+            <!-- Detailed Description -->
+            <TextView
+                android:id="@+id/tvDetailDesc"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="8dp"
+                android:lineSpacingExtra="4dp"
+                android:textColor="@color/text_title"
+                android:textSize="14sp"
+                tools:text="Đặc điểm: Hoa hướng dương là loài hoa nổi bật với màu vàng tươi sáng, luôn hướng về phía mặt trời. Chúng có thân cao và lá lớn, thường được trồng để trang trí trong các vườn hoa hoặc làm nguyên liệu trong các sản phẩm thực phẩm. Hoa hướng dương tượng trưng cho sự kiên cường, tươi mới và năng lượng tích cực." />
+
+            <!-- Price -->
+            <TextView
+                android:id="@+id/tvDetailPrice"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="16dp"
+                android:textColor="@color/price_red"
+                android:textSize="15sp"
+                android:textStyle="bold"
+                tools:text="Giá: 100,000 VND" />
+
+            <!-- Unit -->
+            <TextView
+                android:id="@+id/tvDetailUnit"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="4dp"
+                android:textColor="@color/text_sub"
+                android:textSize="14sp"
+                tools:text="Đơn vị: Bó" />
+
+        </LinearLayout>
+    </ScrollView>
+
+    <!-- Nút Quay lại bo tròn màu xanh như trong ảnh -->
+    <Button
+        android:id="@+id/btnBack"
+        android:layout_width="140dp"
+        android:layout_height="44dp"
+        android:layout_marginBottom="24dp"
+        android:background="@drawable/bg_rounded_button"
+        android:text="Quay lại"
+        android:textAllCaps="false"
+        android:textColor="@color/white"
+        android:textSize="14sp"
+        app:backgroundTint="@color/btn_cyan_blue"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent" />
+
+</androidx.constraintlayout.widget.ConstraintLayout>
